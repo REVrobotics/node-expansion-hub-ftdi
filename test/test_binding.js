@@ -5,8 +5,7 @@ assert(binding.enterExpansionHubFirmwareUpdateMode, "The expected function is un
 
 async function testBasic()
 {
-    // await binding.enterExpansionHubFirmwareUpdateMode("DQ16G720");
-    await binding.enterExpansionHubFirmwareUpdateMode("DQ16");
+    await binding.enterExpansionHubFirmwareUpdateMode("DQ16G720");
 }
 
 assert.doesNotReject(testBasic, Error, "testBasic threw an exception")

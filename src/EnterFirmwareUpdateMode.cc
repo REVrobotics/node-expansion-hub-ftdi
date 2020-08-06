@@ -29,26 +29,26 @@ class Worker: public Napi::AsyncWorker {
                 FT_STATUS status;
 
                 status = FT_OpenEx(&serial, FT_OPEN_BY_SERIAL_NUMBER, &ftHandle);
-                if (status != FT_OK) throw new std::runtime_error("Error opening " + serial);
+                if (status != FT_OK) throw std::runtime_error("Error opening " + serial);
 
                 // Activate programming pin only
                 status = FT_SetBitMode(ftHandle, MASK_PROGRAMMING_ONLY, MODE_CBUS);
-                if (status != FT_OK) throw new std::runtime_error("Error setting programming pin");
+                if (status != FT_OK) throw std::runtime_error("Error setting programming pin");
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
                 // Activate programming and reset pins
                 status = FT_SetBitMode(ftHandle, MASK_PROGRAMMING_AND_RESET, MODE_CBUS);
-                if (status != FT_OK) throw new std::runtime_error("Error setting reset pins");
+                if (status != FT_OK) throw std::runtime_error("Error setting reset pins");
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
                 // Activate programming pin only
                 status = FT_SetBitMode(ftHandle, MASK_PROGRAMMING_ONLY, MODE_CBUS);
-                if (status != FT_OK) throw new std::runtime_error("Error un-setting reset pin");
+                if (status != FT_OK) throw std::runtime_error("Error un-setting reset pin");
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
                 // Activate no pins
                 status = FT_SetBitMode(ftHandle, MASK_NEITHER, MODE_CBUS);
-                if (status != FT_OK) throw new std::runtime_error("Error un-setting programming pin");
+                if (status != FT_OK) throw std::runtime_error("Error un-setting programming pin");
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
                 FT_Close(ftHandle);
@@ -57,7 +57,6 @@ class Worker: public Napi::AsyncWorker {
                 if (ftHandle) {
                     FT_Close(ftHandle);
                 }
-                return;
             }
         }
 
