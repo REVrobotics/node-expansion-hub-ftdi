@@ -1,16 +1,27 @@
 #include <napi.h>
+#include <ftd2xx.h>
 
 using namespace Napi;
 
-Napi::String Method(const Napi::CallbackInfo& info) {
-  Napi::Env env = info.Env();
-  return Napi::String::New(env, "world");
+Napi::Array GetFtdiDevices(const Napi::CallbackInfo& info) {
+    FT_STATUS ftStatus;
+    DWORD numDevs;
+
+    // create the device information list
+    ftStatus = FT_CreateDeviceInfoList(&numDevs);
+    if (ftStatus == FT_OK) {
+        printf("Number of devices is %d\n", numDevs);
+    } else {
+        printf("Error calling FT_CreateDeviceInfoList: %d\n", ftStatus);
+    }
+
+    return Napi::Array::Array();
 }
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-  exports.Set(Napi::String::New(env, "Cbus"),
-              Napi::Function::New(env, Method));
-  return exports;
+    exports.Set(Napi::String::New(env, "getFtdiDevices"),
+              Napi::Function::New(env, GetFtdiDevices));
+    return exports;
 }
 
-NODE_API_MODULE(addon, Init)
+NODE_API_MODULE(cbus, Init)

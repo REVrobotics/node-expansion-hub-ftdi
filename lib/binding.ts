@@ -1,4 +1,6 @@
 const addon = require('../build/Release/cbus-native');
 
-export = addon.Cbus
+console.log("addon:");
+console.log(addon);
 
+exports.getFtdiDevices = addon.getFtdiDevices;

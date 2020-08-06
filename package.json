@@ -4,8 +4,8 @@
         "node-addon-api": "^1.1.0"
     },
     "scripts": {
-        "pretest": "tsc",
-        "test": "node --napi-modules ./test/test_binding.js"
+        "pretest": "node-gyp build && tsc",
+        "test": "node --napi-modules test/test_binding.js"
     },
     "gypfile": true,
     "name": "cbus",
@@ -14,7 +14,7 @@
     "license": "ISC",
     "description": "",
     "devDependencies": {
-        "@types/node": "^7.0.22",
-        "typescript": "^2.3.3"
+        "@types/node": "^14.0.27",
+        "typescript": "^3.9.7"
     }
 }
