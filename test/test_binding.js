@@ -1,16 +1,14 @@
-const cbus = require("../dist/binding.js");
+const binding = require("../dist/binding.js");
 const assert = require("assert").strict;
 
-console.log("cbus:");
-console.log(cbus);
-assert(cbus.getFtdiDevices, "The expected function is undefined");
+assert(binding.enterExpansionHubFirmwareUpdateMode, "The expected function is undefined");
 
-function testBasic()
+async function testBasic()
 {
-    const result =  cbus.getFtdiDevices();
-    assert.equal(result, [], "Unexpected value returned");
+    // await binding.enterExpansionHubFirmwareUpdateMode("DQ16G720");
+    await binding.enterExpansionHubFirmwareUpdateMode("DQ16");
 }
 
-assert.doesNotThrow(testBasic, Error, "testBasic threw an expection");
-
-console.log("Tests passed- everything looks OK!");
+assert.doesNotReject(testBasic, Error, "testBasic threw an exception")
+    .then(() => console.log("Tests passed- everything looks OK!"))
+    .catch(error => console.log(`Tests failed: ${error}`));

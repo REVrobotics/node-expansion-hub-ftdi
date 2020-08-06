@@ -1,8 +1,11 @@
 {
   'targets': [
     {
-      'target_name': 'cbus-native',
-      'sources': [ 'src/cbus.cc' ],
+      'target_name': 'expansion-hub-fw-update-mode-native',
+      'sources': [
+        'src/addon.cc',
+        'src/EnterFirmwareUpdateMode.cc'
+       ],
       'include_dirs': [
         "src/",
         "d2xx/",

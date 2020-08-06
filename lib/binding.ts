@@ -1,6 +1,4 @@
-const addon = require('../build/Release/cbus-native');
+import {promisify} from "util";
+const addon = require('../build/Release/expansion-hub-fw-update-mode-native');
 
-console.log("addon:");
-console.log(addon);
-
-exports.getFtdiDevices = addon.getFtdiDevices;
+exports.enterExpansionHubFirmwareUpdateMode = promisify(addon.enterExpansionHubFirmwareUpdateMode);
