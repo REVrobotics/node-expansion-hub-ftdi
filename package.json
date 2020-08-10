@@ -1,20 +1,26 @@
 {
     "main": "lib/binding.js",
     "dependencies": {
+        "bindings": "^1.5.0",
         "node-addon-api": "^1.1.0"
     },
     "scripts": {
         "pretest": "node-gyp build && tsc",
-        "test": "node --napi-modules test/test_binding.js"
+        "test": "node --napi-modules test/test_binding.js",
+        "publish": "prebuild --all"
     },
     "gypfile": true,
-    "name": "cbus",
+    "name": "expansion-hub-ftdi",
     "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/REVrobotics/node-expansion-hub-ftdi.git"
+    },
     "author": "",
-    "license": "ISC",
     "description": "",
     "devDependencies": {
         "@types/node": "^14.0.27",
+        "prebuild": "^10.0.0",
         "typescript": "^3.9.7"
     }
 }

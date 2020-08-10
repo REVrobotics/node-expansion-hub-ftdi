@@ -3,9 +3,9 @@ const assert = require("assert").strict;
 
 assert(binding.enterExpansionHubFirmwareUpdateMode, "The expected function is undefined");
 
-async function testBasic()
-{
-    await binding.enterExpansionHubFirmwareUpdateMode("DQ16G720");
+async function testBasic() {
+    const serial = "DQ16G720"; // Replace with the serial number of your Expansion Hub
+    await binding.enterExpansionHubFirmwareUpdateMode(serial);
 }
 
 assert.doesNotReject(testBasic, Error, "testBasic threw an exception")

@@ -1,7 +1,7 @@
 {
   'targets': [
     {
-      'target_name': 'expansion-hub-fw-update-mode-native',
+      'target_name': 'addon',
       'sources': [
         'src/addon.cc',
         'src/EnterFirmwareUpdateMode.cc'

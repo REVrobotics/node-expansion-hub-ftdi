@@ -1,4 +1,6 @@
 import {promisify} from "util";
-const addon = require('../build/Release/expansion-hub-fw-update-mode-native');
+const addon = require('bindings')('addon.node');
 
-exports.enterExpansionHubFirmwareUpdateMode = promisify(addon.enterExpansionHubFirmwareUpdateMode);
+const enterExpansionHubFirmwareUpdateMode: (serial: string) => Promise<void> = promisify(addon.enterExpansionHubFirmwareUpdateMode);
+
+exports.enterExpansionHubFirmwareUpdateMode = enterExpansionHubFirmwareUpdateMode;
