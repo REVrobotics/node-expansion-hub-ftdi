@@ -11,6 +11,9 @@
         "d2xx/",
         "<!@(node -p \"require('node-addon-api').include\")"
         ],
+      'defines': [
+        "NAPI_VERSION=<(napi_build_version)"
+      ],
       'dependencies': ["<!(node -p \"require('node-addon-api').gyp\")"],
       'link_settings': {
         "conditions": [

@@ -1,26 +1,34 @@
 {
+    "name": "expansion-hub-ftdi",
+    "version": "1.0.1",
+    "author": "REV Robotics",
+    "description": "Puts USB-connected Expansion Hubs into firmware update mode",
+    "license": "MIT",
     "main": "lib/binding.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/REVrobotics/node-expansion-hub-ftdi.git"
+    },
     "dependencies": {
         "bindings": "^1.5.0",
-        "node-addon-api": "^1.1.0"
+        "node-addon-api": "^1.1.0",
+        "prebuild-install": "^5.3.5"
+    },
+    "devDependencies": {
+        "@types/node": "^14.0.27",
+        "prebuild": "^10.0.0",
+        "typescript": "^3.9.7"
     },
     "scripts": {
         "pretest": "node-gyp build && tsc",
         "test": "node --napi-modules test/test_binding.js",
         "publish": "node-gyp rebuild && prebuild -t 80 -r electron"
     },
-    "gypfile": true,
-    "name": "expansion-hub-ftdi",
-    "version": "1.0.0",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/REVrobotics/node-expansion-hub-ftdi.git"
+    "engines": {
+        "node": ">=12.0.0"
     },
-    "author": "",
-    "description": "",
-    "devDependencies": {
-        "@types/node": "^14.0.27",
-        "prebuild": "^10.0.0",
-        "typescript": "^3.9.7"
-    }
+    "binary": {
+        "napi_versions": [3]
+    },
+    "gypfile": true
 }
