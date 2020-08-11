@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "lib": [ "esnext" ],
     "module": "commonjs",
     "outDir": "./dist",
     "rootDir": "./lib",
     "strict": true,
-    "target": "es6",
+    "target": "es5",
     "types": [
       "node"
     ],
