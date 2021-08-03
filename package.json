@@ -1,6 +1,6 @@
 {
     "name": "@rev-robotics/expansion-hub-ftdi",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "REV Robotics",
     "description": "Puts USB-connected Expansion Hubs into firmware update mode",
     "license": "MIT",
