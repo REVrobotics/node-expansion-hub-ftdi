@@ -11,5 +11,5 @@ update mode.
 4. Commit change to git
 5. Run `git tag v<version>`
 6. Run `git push --tags`
-7. Run `npm publish`
-
+7. Run `npm publish --access public`
+8. Create a new release on GitHub with an explanation of the changes
