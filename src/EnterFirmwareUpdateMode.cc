@@ -29,7 +29,7 @@ class Worker: public Napi::AsyncWorker {
                 FT_STATUS status;
 
                 status = FT_OpenEx(&serial, FT_OPEN_BY_SERIAL_NUMBER, &ftHandle);
-                if (status != FT_OK) throw std::runtime_error("Error opening " + serial);
+                if (status != FT_OK) throw std::runtime_error("Error opening " + serial + ". Error code " + std::to_string(status));
 
                 // Activate programming pin only
                 status = FT_SetBitMode(ftHandle, MASK_PROGRAMMING_ONLY, MODE_CBUS);
