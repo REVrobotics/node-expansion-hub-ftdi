@@ -11,21 +11,19 @@
         "url": "https://github.com/REVrobotics/node-expansion-hub-ftdi.git"
     },
     "dependencies": {
-        "bindings": "^1.5.0",
-        "node-addon-api": "^4.2.0",
-        "prebuild-install": "^7.0.0"
+        "node-addon-api": "^6.0.0",
+        "node-gyp-build": "^4.6.0"
     },
     "devDependencies": {
-        "@types/node": "^16.11.10",
-        "node-gyp": "^8.4.1",
-        "typescript": "^4.5.2"
-    },
-    "peerDependencies": {
-        "node-gyp": "^8.4.1"
+        "@types/node": "^16.18.18",
+        "node-gyp": "^9.3.1",
+        "prebuildify": "^5.0.1",
+        "typescript": "^5.0.2"
     },
     "scripts": {
-        "install": "node-gyp rebuild",
-        "pretest": "node-gyp build && tsc",
+        "install": "node-gyp-build",
+        "prepublishOnly": "tsc && prebuildify --napi",
+        "pretest": "node-gyp-build && tsc",
         "test": "node --napi-modules test/test_binding.js"
     },
     "engines": {
