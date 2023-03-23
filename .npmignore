@@ -1,7 +1,5 @@
 build
 lib
 test
-d2xx/Static
 .idea
 tsconfig.json
-README.md
