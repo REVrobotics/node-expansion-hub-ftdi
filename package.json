@@ -12,16 +12,16 @@
     },
     "dependencies": {
         "bindings": "^1.5.0",
-        "node-addon-api": "^4.2.0",
+        "node-addon-api": "^6.0.0",
         "prebuild-install": "^7.0.0"
     },
     "devDependencies": {
-        "@types/node": "^16.11.10",
-        "node-gyp": "^8.4.1",
-        "typescript": "^4.5.2"
+        "@types/node": "^16.18.18",
+        "node-gyp": "^9.3.1",
+        "typescript": "^5.0.2"
     },
     "peerDependencies": {
-        "node-gyp": "^8.4.1"
+        "node-gyp": "^9.3.1"
     },
     "scripts": {
         "install": "node-gyp rebuild",
