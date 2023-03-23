@@ -17,10 +17,12 @@
     "devDependencies": {
         "@types/node": "^16.18.18",
         "node-gyp": "^9.3.1",
+        "prebuildify": "^5.0.1",
         "typescript": "^5.0.2"
     },
     "scripts": {
         "install": "node-gyp-build",
+        "prepublishOnly": "prebuildify --napi",
         "pretest": "node-gyp-build && tsc",
         "test": "node --napi-modules test/test_binding.js"
     },
