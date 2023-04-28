@@ -1,5 +1,5 @@
 This is version 2.12.28 of the FTDI D2XX drivers for Windows, downloaded from https://www.ftdichip.com/Drivers/D2XX.htm
-The actual Windows Drivers have been removed, leaving only the libraries.
+The actual Windows Drivers have been removed, leaving only the d2xx .lib and .dll files.
 
 The following license is found in ftd2xx.h:
 
