@@ -17,14 +17,6 @@
       'dependencies': ["<!(node -p \"require('node-addon-api').gyp\")"],
       'link_settings': {
         "conditions": [
-            ["target_arch=='ia32'",
-            {
-              'libraries':
-              [
-               '-l<(module_root_dir)/d2xx/i386/ftd2xx.lib'
-              ]
-            }
-          ],
           ["target_arch=='x64'", {
             'libraries': [
                '-l<(module_root_dir)/d2xx/amd64/ftd2xx.lib'

@@ -3,3 +3,6 @@ lib
 test
 .idea
 tsconfig.json
+
+# Ensure we don't accidentally include tarballs produced by npm pack
+rev-robotics-expansion-hub-ftdi-*.tgz
