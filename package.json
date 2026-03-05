@@ -17,7 +17,7 @@
     },
     "devDependencies": {
         "@types/node": "^16.18.18",
-        "node-gyp": "^9.3.1",
+        "node-gyp": "^12.2.0",
         "prebuild": "^13.0.1",
         "prebuildify": "^5.0.1",
         "typescript": "^5.0.2"
